@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Editorial } from '../../editorial/editorial';
 import { BookService } from '../book.service';
 import { BookDetail } from '../bookDetail';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('BookListComponent', () => {
@@ -20,13 +21,12 @@ describe('BookListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, RouterTestingModule],
       declarations: [ BookListComponent ],
       providers: [ BookService ]
     })
     .compileComponents();
   }));
-
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BookListComponent);
